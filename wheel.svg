@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="500" height="500">
+  <!-- Outer Ring -->
+  <circle cx="250" cy="250" r="240" fill="#26a69a" stroke="#00796b" stroke-width="5"/>
+  
+  <!-- Inner Wheel with Segments -->
+  <g>
+    <!-- Try Again (Red) -->
+    <path d="M250,250 L250,10 A240,240 0 0,1 435.8,64.2 Z" fill="#f44336" />
+    <text x="320" y="75" transform="rotate(22.5 250,250)" font-family="Arial" font-size="18" font-weight="bold" fill="white">TRY AGAIN</text>
+    
+    <!-- 2 Coins (Green) -->
+    <path d="M250,250 L435.8,64.2 A240,240 0 0,1 490,250 Z" fill="#4CAF50" />
+    <text x="370" y="175" transform="rotate(67.5 250,250)" font-family="Arial" font-size="24" font-weight="bold" fill="white">2</text>
+    
+    <!-- 4 Coins (Green) -->
+    <path d="M250,250 L490,250 A240,240 0 0,1 435.8,435.8 Z" fill="#2196F3" />
+    <text x="370" y="320" transform="rotate(112.5 250,250)" font-family="Arial" font-size="24" font-weight="bold" fill="white">4</text>
+    
+    <!-- 6 Coins (Yellow) -->
+    <path d="M250,250 L435.8,435.8 A240,240 0 0,1 250,490 Z" fill="#FFC107" />
+    <text x="320" y="410" transform="rotate(157.5 250,250)" font-family="Arial" font-size="24" font-weight="bold" fill="white">6</text>
+    
+    <!-- 3 Coins (Orange) -->
+    <path d="M250,250 L250,490 A240,240 0 0,1 64.2,435.8 Z" fill="#FF9800" />
+    <text x="180" y="410" transform="rotate(202.5 250,250)" font-family="Arial" font-size="24" font-weight="bold" fill="white">3</text>
+    
+    <!-- 10 Coins (Purple) -->
+    <path d="M250,250 L64.2,435.8 A240,240 0 0,1 10,250 Z" fill="#9C27B0" />
+    <text x="120" y="320" transform="rotate(247.5 250,250)" font-family="Arial" font-size="24" font-weight="bold" fill="white">10</text>
+    
+    <!-- 8 Coins (Blue) -->
+    <path d="M250,250 L10,250 A240,240 0 0,1 64.2,64.2 Z" fill="#3F51B5" />
+    <text x="120" y="175" transform="rotate(292.5 250,250)" font-family="Arial" font-size="24" font-weight="bold" fill="white">8</text>
+    
+    <!-- 15 Coins (Teal) -->
+    <path d="M250,250 L64.2,64.2 A240,240 0 0,1 250,10 Z" fill="#009688" />
+    <text x="180" y="75" transform="rotate(337.5 250,250)" font-family="Arial" font-size="24" font-weight="bold" fill="white">15</text>
+    
+    <!-- 20 Coins (Deep Purple) -->
+    <circle cx="250" cy="250" r="50" fill="#673AB7" stroke="#512DA8" stroke-width="2"/>
+    <text x="235" y="258" font-family="Arial" font-size="22" font-weight="bold" fill="white">20</text>
+  </g>
+  
+  <!-- Center Point -->
+  <circle cx="250" cy="250" r="10" fill="#00796b" stroke="#26a69a" stroke-width="3"/>
+  
+  <!-- Division Lines -->
+  <line x1="250" y1="250" x2="250" y2="10" stroke="#fff" stroke-width="2" />
+  <line x1="250" y1="250" x2="435.8" y2="64.2" stroke="#fff" stroke-width="2" />
+  <line x1="250" y1="250" x2="490" y2="250" stroke="#fff" stroke-width="2" />
+  <line x1="250" y1="250" x2="435.8" y2="435.8" stroke="#fff" stroke-width="2" />
+  <line x1="250" y1="250" x2="250" y2="490" stroke="#fff" stroke-width="2" />
+  <line x1="250" y1="250" x2="64.2" y2="435.8" stroke="#fff" stroke-width="2" />
+  <line x1="250" y1="250" x2="10" y2="250" stroke="#fff" stroke-width="2" />
+  <line x1="250" y1="250" x2="64.2" y2="64.2" stroke="#fff" stroke-width="2" />
+</svg>

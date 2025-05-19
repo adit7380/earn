@@ -1,0 +1,133 @@
+TRANSFER INSTRUCTIONS FOR SPINEARNUSDT TO INFINITYFREE HOSTING
+
+1. SETTING UP YOUR INFINITYFREE ACCOUNT
+   - Create an account at infinityfree.net if you don't have one
+   - Log in to your control panel
+   - Create a new website with a domain name of your choice
+   - Note down your MySQL database credentials:
+     * MySQL Hostname (usually sql107.infinityfree.com)
+     * MySQL Username
+     * MySQL Database name
+     * MySQL Password
+     * MySQL Port (usually 3306)
+
+2. DATABASE SETUP
+   - Open the "config.infinityfree.php" file
+   - Update the database credentials with your InfinityFree MySQL information:
+     * DB_HOST
+     * DB_USER
+     * DB_PASS
+     * DB_NAME
+     * DB_PORT
+   - Rename this file to "config.php" when transferring
+
+3. APPLICATION PREPARATION
+   - Replace "includes/db.php" with "includes/db.infinityfree.php" and rename it to "db.php"
+   - Make sure all the following files are included:
+     * All PHP files in the root directory
+     * The "admin" folder and all its contents
+     * The "includes" folder and all its contents
+     * The "css" folder and all its contents
+     * The "js" folder and all its contents
+     * The "assets" folder and all its contents
+
+4. FILE TRANSFER
+   - Log in to your InfinityFree control panel
+   - Open the File Manager
+   - Create a new folder called "spinearnusdt" if you want to keep the app in a subdirectory
+   - Upload all the application files to your hosting (either to the root or the subdirectory)
+   
+5. DATABASE INITIALIZATION
+   - The database tables will be created automatically when you first access the website
+   - Default admin credentials will be:
+     * Username: admin
+     * Password: admin123
+
+6. TELEGRAM BOT CONFIGURATION
+   - Your Telegram bot token is: 8072939664:AAHSo0bix_AkbkuMGohefUcVoaXKdrRvTyY
+   - Bot username: SpinEarnbox_bot
+   - You will need to update the webhook URL for your Telegram bot to point to your new InfinityFree domain
+   - Use this command to set the webhook:
+     curl -F "url=https://your-infinityfree-domain.com/bot.php" https://api.telegram.org/bot8072939664:AAHSo0bix_AkbkuMGohefUcVoaXKdrRvTyY/setWebhook
+
+7. AD INTEGRATION
+   - We've created a dedicated file called `ads_integration.php` that contains all the required ad integration functions
+   - Include this file in your header.php or any page where you want to display ads:
+     ```php
+     require_once 'ads_integration.php';
+     ```
+   
+   - To add the ad SDK to your header:
+     ```php
+     <?php insert_ad_header(); ?>
+     ```
+   
+   - To display different types of ads, use these functions:
+     * For rewarded ads in the spin section:
+       ```php
+       <?php insert_reward_ad_spin(); ?>
+       ```
+       Then in your JavaScript code, call:
+       ```javascript
+       showRewardAd(function() {
+           // Code to execute after user watches ad and gets reward
+       });
+       ```
+
+     * For rewarded ads in the watch section:
+       ```php
+       <?php insert_reward_ad_watch(); ?>
+       ```
+       Then in your JavaScript code, call:
+       ```javascript
+       showWatchAd(adId, function(adId) {
+           // Code to execute after user watches ad and gets reward
+       });
+       ```
+
+     * For automatic interstitial ads:
+       ```php
+       <?php insert_interstitial_ad(); ?>
+       ```
+
+     * For banner ads (sizes: '300x250', '468x60', '160x300', '320x50', '160x600', '728x90'):
+       ```php
+       <?php insert_banner_ad('300x250'); ?>
+       ```
+
+     * For popunder ads:
+       ```php
+       <?php insert_popunder_ad(); ?>
+       ```
+
+     * For social bar ads:
+       ```php
+       <?php insert_social_bar_ad(); ?>
+       ```
+
+     * For native banner ads:
+       ```php
+       <?php insert_native_banner_ad(); ?>
+       ```
+
+8. TESTING
+   - Navigate to your website URL on InfinityFree
+   - Test the login functionality
+   - Test all features: spinning wheel, watching ads, referring, and withdrawal
+   - Check the admin panel at /admin
+
+9. TROUBLESHOOTING
+   - If you encounter database connection errors:
+     * Verify your database credentials in config.php
+     * Make sure your MySQL database exists on InfinityFree
+   - If pages don't load properly:
+     * Check for PHP errors in the error logs
+     * Make sure all files were uploaded correctly
+   - If Telegram integration doesn't work:
+     * Verify the webhook is set correctly
+     * Check the Telegram bot token is valid
+
+10. SECURITY CONSIDERATIONS
+    - Change the default admin password immediately after first login
+    - Set up proper file permissions if your hosting allows it
+    - Consider implementing HTTPS if not automatically provided by InfinityFree
